@@ -4,7 +4,8 @@
 
 
 # * Notes: 
-#*        2 Good Solutions. Most efficient is o(n) as shown below solution checks is the stirngs are the same lenght if so count each char in a hashset/dict. Then compare characters in 2nd string to letter stored in count to check they exist and number of times they appear
+#*        Solution 1 is easy but not the most effective using sorted to check whether both strings are the same when sorted alphabetically however the solution is not the most efficent due to needing to sort being O(nlogn)
+#*        Solution 2 is very similar in amoount of code however counter() is a function that maps the valuesi n a string to a dictionary object with each character in a string as the key and the count of each character as the value
 
 
 # ! SOLUTION 
@@ -15,20 +16,22 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        if len(s) != len(t):
-            return False
+        
+        return sorted(s) == sorted(t)
+    
 
-        count = {}
+# ! BETTER SOLUTION
+from collections import Counter
+class Solution(object):
+    def isAnagram(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: bool
+        """
+        
+        return Counter(s) == Counter(t)
 
-        for char in s:
-            count[char] = count.get(char, 0) + 1
-
-        for char in t:
-            if char not in count or count[char] == 0:
-                return False 
-            count[char] -= 1
-
-        return True
 
 
     

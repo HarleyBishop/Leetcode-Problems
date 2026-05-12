@@ -14,13 +14,12 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
-        values = set()
-        for num in nums:
-            if (num in values):
-                return True
-            else:
-                values.add(num)
+        hashset = set()
 
+        for num in nums:
+            if num in hashset:
+                return True
+            hashset.add(num)
         return False
             
     
