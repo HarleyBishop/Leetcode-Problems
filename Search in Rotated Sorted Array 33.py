@@ -1,4 +1,6 @@
 
+#* To get O log N time use binary search is a must. Therefore check which side of the array is sorted and check whether the target is in that range of values if not itll be in the other half.
+
 
 #! SOLUTION:
 
