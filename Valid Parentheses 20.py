@@ -15,7 +15,8 @@ class Solution:
             else:
                 if not stack or hashset[stack.pop()] != c:
                     return False
-                    
+        
+        # Stack has to be empty otherwise false
         return not stack
 
 # ! More efficent
